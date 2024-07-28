@@ -1,0 +1,450 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #div {
+            background-color: #343a40;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        #div form {
+            display: inline-block;
+            margin: 5px;
+        }
+        
+        #div button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        #div button:hover {
+            background-color: #0056b3;
+        }
+        
+        #middle {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        #form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        #form input[type="text"],
+        #form input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        #form button[type="submit"] {
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        #form button[type="submit"]:hover {
+            background-color: #218838;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        } 
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f1faee; /* Light Cream */
+    margin: 0;
+    padding: 0;
+}
+
+#div {
+    background-color: #1d3557; /* Dark Blue */
+    padding: 10px;
+    text-align: center;
+}
+
+#div form {
+    display: inline-block;
+    margin: 5px;
+}
+
+#div button {
+    background-color: #e63946; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#div button:hover {
+    background-color: #457b9d; /* Blue Gray */
+}
+
+#middle {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#form input[type="text"],
+#form input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#form button[type="submit"] {
+    background-color: #457b9d; /* Blue Gray */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#form button[type="submit"]:hover {
+    background-color: #1d3557; /* Dark Blue */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div id="div">
+       
+        <form action="/order" method="POST">
+            <button>ORDERS</button>
+        </form>
+        <form action="/home" method="GET">
+            <button>HOME</button>
+        </form>
+        <form action="/addproduct" method="GET">
+            <button type="submit">ADD NEW PRODUCT</button>
+        </form>
+     
+        <% if(session!=true){ %>
+        <form action="/login" method="GET">
+        <button type="submit">LOGIN</button>
+        </form>
+        <% }else{ %>
+    </form>
+    <form action="/logout" method="POST">
+    <button type="submit">LOGOUT</button>
+    </form>
+    <%}%>
+    <% if(session!=true){ %>
+        <form action="/signin" method="GET">
+        <button type="submit">SIGN-IN</button>
+        </form>
+        <% }%>
+    </div>
+    <div id="middle">
+        <h1>Welcome to our Book Shop</h1>
+        Add more content as needed
+    </div>
+   
+
+</body>
+</html>  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1faee;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar {
+            background-color: #1d3557;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #navbar form {
+            display: inline-block;
+            margin: 5px;
+        }
+
+        #navbar button {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #navbar button:hover {
+            background-color: #457b9d;
+        }
+
+        #middle {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        #middle h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+
+        #middle p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        #form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        #form input[type="text"],
+        #form input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #form button[type="submit"] {
+            background-color: #457b9d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #form button[type="submit"]:hover {
+            background-color: #1d3557;
+        }
+
+        #about {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        #about h2 {
+            font-size: 28px;
+            color: #1d3557;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #about img {
+            width: 150px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #1d3557;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-links a {
+            color: #e63946;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+        }
+
+        .contact-info p {
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            #navbar button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            #middle h1 {
+                font-size: 28px;
+            }
+
+            #middle p {
+                font-size: 16px;
+            }
+
+            #about h2 {
+                font-size: 24px;
+            }
+
+            #about p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <form action="/order" method="POST">
+            <button>ORDERS</button>
+        </form>
+        <form action="/home" method="GET">
+            <button>HOME</button>
+        </form>
+        <form action="/addproduct" method="GET">
+            <button type="submit">ADD NEW PRODUCT</button>
+        </form>
+        <% if (session != true) { %>
+            <form action="/login" method="GET">
+                <button type="submit">LOGIN</button>
+            </form>
+        <% } else { %>
+            <form action="/logout" method="POST">
+                <button type="submit">LOGOUT</button>
+            </form>
+        <% } %>
+        <% if (session != true) { %>
+            <form action="/signin" method="GET">
+                <button type="submit">SIGN-IN</button>
+            </form>
+        <% } %>
+    </div>
+
+    <div id="middle">
+        <h1>Welcome to Our Book Shop</h1>
+        <p>
+            Discover the best books, handpicked just for you. Dive into a world of imagination and knowledge with our extensive collection of books across all genres.
+        </p>
+        <img src="https://giphy.com/clips/studiosoriginals-12qxR8tbj3qvq23V7z" alt="Books GIF" width="200" height="200">
+    </div>
+
+    <div id="about">
+        <h2>About Us</h2>
+        <p>
+            Welcome to Shop.com, where we are passionate about bringing the best literature to book lovers all around the world. Our mission is to provide a diverse selection of books, from bestsellers to rare finds, catering to every reader's taste. Our friendly staff is always here to help you find your next great read. Come visit us and be part of our reading community!
+        </p>
+        <img src="https://via.placeholder.com/150" alt="About Us Image">
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/contact">Contact Us</a>
+        </div>
+        <div class="contact-info">
+            <p>123 Book St, Library City, 12345</p>
+            <p>Email: contact@shop.com | Phone: +1 (555) 123-4567</p>
+        </div>
+        <p>© 2024 Book Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!-- <html>
+ 
+    <body>
+   <div id="div">
+    <form action="/p" method="POST">
+    <button>TITLE</button>
+    </form>
+    <form action="/home" method="POST">
+    <button>HOME</button>
+    </form>
+    <form action="/addproduct" method="POST">
+    <button type="submit">ADD NEW PRODUCT</button>
+    </form>
+   </div>
+   <div id="middle">
+
+   </div>
+   <div id="form">
+   <form action="/carti" method="post">
+    <label for="name">NAME:</label>
+    <input type="text" name="name"/>
+    <br/>
+    <label for="password">PASSWORD:</label>
+    <input type="password" name="password"/>
+    <br/>
+    <button type="submit">SUBMIT</button>
+   </form>
+   </div>
+</body>
+   
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #div {
+            background-color: #343a40;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        #div form {
+            display: inline-block;
+            margin: 5px;
+        }
+        
+        #div button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        #div button:hover {
+            background-color: #0056b3;
+        }
+        
+        #middle {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        #form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        #form input[type="text"],
+        #form input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        #form button[type="submit"] {
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        #form button[type="submit"]:hover {
+            background-color: #218838;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <form action="/p" method="POST">
+            <button>TITLE</button>
+        </form>
+        <form action="/home" method="POST">
+            <button>HOME</button>
+        </form>
+        <form action="/addproduct" method="POST">
+            <button type="submit">ADD NEW PRODUCT</button>
+        </form>
+        <form action="/login" method="POST">
+        <button type="submit">LOGIN</button>
+        </form>
+    </form>
+    <form action="/logout" method="POST">
+    <button type="submit">LOGOUT</button>
+    </form>
+    </div>
+    <div id="middle">
+        <h1>Welcome to our Book Shop</h1>
+        Add more content as needed
+    </div>
+    <div id="form">
+        <h2>Login to Your Account</h2>
+        <form action="/carti" method="post">
+            <label for="name">NAME:</label>
+            <input type="text" name="name" required>
+            <br><br>
+            <label for="password">PASSWORD:</label>
+            <input type="password" name="password" required>
+            <br><br>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>

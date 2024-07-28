@@ -1,0 +1,113 @@
+<!-- <html>
+<head><title>ADD NEW PRODUCT!</title></head>
+<h1>ADD NEW PRODUCT</h1>
+<form action="/adding" method="POST">
+    <label for="id">ID:</label>
+<input type="text" name="id"/>
+<label for="title">TITLE:</label>
+<input type="text" name="title"/>
+<label for="image">IMAGE:</label>
+<input type="text" name="image"/>
+<button type="submit">SUBMIT</button>
+</form>
+
+
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ADD NEW PRODUCT!</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F1FAEE;
+            color: #1D3557;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Container and Centering */
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading Style */
+        h1 {
+            color: #E63946;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Form Style */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #457B9D;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #A8DADC;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #457B9D;
+            outline: none;
+        }
+
+        /* Button Style */
+        button[type="submit"] {
+            background-color: #457B9D;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1D3557;
+        }
+
+        /* Form Label Styling */
+        label {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ADD NEW PRODUCT</h1>
+        <% if (mess&&mess.length>0){ %>
+            <%= mess %>
+            <% } %>
+        <form action="/adding" method="POST" enctype="multipart/form-data">
+            <label for="id">ID:</label>
+            <input type="text" name="id" id="id"/>
+            <label for="title">TITLE:</label>
+            <input type="text" name="title" id="title"/>
+            <label for="price">PRICE:</label>
+            <input type="text" name="price" id="price"/>
+            <label for="image">IMAGE:</label>
+            <input type="file" name="image" id="image"/>
+       
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1faee; /* Light Cream */
+            margin: 0;
+            padding: 0;
+        }
+
+        #div {
+            background-color: #1d3557; /* Dark Blue */
+            padding: 10px;
+            text-align: center;
+        }
+
+        #div form {
+            display: inline-block;
+            margin: 5px;
+        }
+
+        #div button {
+            background-color: #e63946; /* Red */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #div button:hover {
+            background-color: #457b9d; /* Blue Gray */
+        }
+
+        #middle {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #form input[type="text"],
+        #form input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #form button[type="submit"] {
+            background-color: #457b9d; /* Blue Gray */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #form button[type="submit"]:hover {
+            background-color: #1d3557; /* Dark Blue */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        /* Animation container */
+        .animation-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Lottie animation styles */
+        .lottie-animation {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+    <!-- Lottie Player Library -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body>
+    <div id="div">
+        <form action="/p" method="POST">
+            <button>TITLE</button>
+        </form>
+        <form action="/home" method="POST">
+            <button>HOME</button>
+        </form>
+        <form action="/addproduct" method="POST">
+            <button type="submit">ADD NEW PRODUCT</button>
+        </form>
+
+        <% if(session!=true){ %>
+        <form action="/login" method="POST">
+            <button type="submit">LOGIN</button>
+        </form>
+        <% }else{ %>
+        <form action="/logout" method="POST">
+            <button type="submit">LOGOUT</button>
+        </form>
+        <%}%>
+        <% if(session!=true){ %>
+        <form action="/signin" method="POST">
+            <button type="submit">SIGN-IN</button>
+        </form>
+        <% }%>
+    </div>
+
+    <div id="middle">
+        <h1>Welcome to our Book Shop</h1>
+        <!-- Lottie Animation -->
+        <div class="animation-container">
+            <img src="https://lottie.host/04c45a26-c5aa-40d2-a4ad-bc9edc66c5ee/GM2FsIKZCd.json" />
+        </div>
+        <p>Add more content as needed</p>
+    </div>
+
+    <!-- <div id="form">
+        <h2>Login to Your Account</h2>
+        <form action="/carti" method="post">
+            <label for="name">NAME:</label>
+            <input type="text" name="name" required>
+            <br><br>
+            <label for="password">PASSWORD:</label>
+            <input type="password" name="password" required>
+            <br><br>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div> -->
+</body>
+</html>

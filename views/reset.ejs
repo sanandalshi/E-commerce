@@ -1,0 +1,90 @@
+<!-- <% if(message.length>0){ %>
+    <div>
+        <p><%= message %></p>
+       
+  </div>
+  <% } %>
+    <form action="/loogin" method="POST">
+        <input type="email" name="email" required />
+        <input type="password" name="password" required />
+        <button type="submit">SUBMIT</button>
+    </form>
+     -->
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Login Page</title>
+         <style>
+             body {
+                 background-color: #f1faee; /* Use the lightest color as background */
+                 font-family: Arial, sans-serif;
+                 color: #1d3557; /* Use the darkest color as text color */
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 height: 100vh;
+                 margin: 0;
+             }
+     
+             .container {
+                 background-color: #a8dadc; /* Use a light background color for the container */
+                 padding: 20px;
+                 border-radius: 10px;
+                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                 width: 300px;
+             }
+     
+             form {
+                 display: flex;
+                 flex-direction: column;
+             }
+     
+             input[type="email"],
+             input[type="password"],
+             button {
+                 margin-bottom: 10px;
+                 padding: 8px;
+                 border: none;
+                 border-radius: 5px;
+                 font-size: 16px;
+             }
+     
+             button {
+                 background-color: #e63946; /* Use the accent color for buttons */
+                 color: #f1faee; /* Light text color for buttons */
+                 cursor: pointer;
+                 transition: background-color 0.3s ease;
+             }
+     
+             button:hover {
+                 background-color: #457b9d; /* Darker shade of the accent color on hover */
+             }
+     
+             .error-message {
+                 background-color: #e63946; /* Use error color for the message */
+                 color: #f1faee; /* Light text color for the message */
+                 padding: 10px;
+                 margin-bottom: 10px;
+                 border-radius: 5px;
+             }
+         </style>
+     </head>
+     <body>
+         <div class="container">
+             <% if (message && message.length>0){ %>
+             <div class="error-message">
+                 <p><%= message %></p>
+             </div>
+             <% } %>
+             <form action="/reset-auth" method="POST">
+                 <input type="email" name="email" placeholder="Enter your email" required />
+                
+                 <button type="submit">RESET-PASSWORD</button>
+               
+             </form>
+         </div>
+     </body>
+     </html>
+     

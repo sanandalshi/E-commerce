@@ -1,0 +1,156 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <% if(ans && ans.length > 0) { %>
+    <div >
+        <p>YOUR ORDER:</p>
+        <p>Order-Id: <%= id %></p>
+        <% const now = new Date(); %>
+        <p>Date of order: <%= now.toLocaleString() %></p>
+
+        <ul>
+          <% ans.forEach(a => { %>
+            <li>
+              <h2><%= a.title %></h2>
+              <p>Quantity: <%= a.quan %></p>
+              <p>ID: <%= a.id %></p>
+            </li>
+          <% }); %>
+        </ul>
+        <p>Total Amount: ₹ <%= total %></p>
+        <form action="/pay" method="POST">
+          <input type="hidden" name="amount" value="<%= total %>"/>
+          <button>PAY!</button>
+      </form>
+         <!-- <a href="/order/<%= id %>/<%= total %>">Invoice</a>  -->
+    </div>
+    <% } else { %>
+    <p >NO CURRENT ORDERS</p>
+    <% } %>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Order</title>
+    <style>
+        /* Base styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1faee; /* Light background */
+            color: #1d3557; /* Dark text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #a8dadc; /* Light teal background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        p {
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #457b9d; /* Medium blue border */
+            border-radius: 4px;
+            background-color: #ffffff; /* White background for list items */
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #f1faee; /* Light background on hover */
+        }
+
+        h2 {
+            margin: 0;
+            color: #e63946; /* Coral color for headings */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #457b9d; /* Medium blue button */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #1d3557; /* Dark blue on hover */
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #457b9d;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #e63946; /* Coral color on hover */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <% if(ans && ans.length > 0) { %>
+    <div>
+        <p>YOUR ORDER:</p>
+        <p>Order-Id: <%= id %></p>
+        <% const now = new Date(); %>
+        <p>Date of order: <%= now.toLocaleString() %></p>
+
+        <ul>
+            <% ans.forEach(a => { %>
+            <li>
+                <h2><%= a.title %></h2>
+                <p>Quantity: <%= a.quan %></p>
+                <p>ID: <%= a.id %></p>
+            </li>
+            <% }); %>
+        </ul>
+        <p>Total Amount: ₹ <%= total %></p>
+        <form action="/pay" method="POST">
+            <input type="hidden" name="amount" value="<%= total %>"/>
+            <button type="submit">PAY!</button>
+        </form>
+        <a href="/order/<%= id %>/<%= total %>">Invoice</a>
+    </div>
+    <% } else { %>
+    <p>NO CURRENT ORDERS</p>
+    <% } %>
+</body>
+
+</html>

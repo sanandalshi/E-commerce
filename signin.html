@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1faee; /* Light Cream */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #1d3557; /* Dark Blue */
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #a8dadc; /* Pale Blue */
+            border-radius: 4px;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #457b9d; /* Blue Gray */
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #e63946; /* Red */
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #457b9d; /* Blue Gray */
+        }
+    </style>
+</head>
+<body>
+
+    <form action="/valid" method="POST">
+        <label for="email">EMAIL:</label>
+        <input type="email" name="email" id="email" required />
+        
+        <label for="password">PASSWORD:</label>
+        <input type="password" name="password" id="password" required />
+        
+        <label for="cpassword">CONFIRM PASSWORD:</label>
+        <input type="password" name="cpassword" id="cpassword" required />
+        
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

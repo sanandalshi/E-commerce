@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CART</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F1FAEE; /* Background color from palette */
+            color: #1D3557; /* Text color from palette */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #457B9D; /* Heading color from palette */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product-item {
+            background-color: #A8DADC; /* Card background color from palette */
+            border: 1px solid #1D3557; /* Border color from palette */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .product-item p {
+            margin: 5px 0;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #E63946; /* Button background color from palette */
+            color: #F1FAEE; /* Button text color from palette */
+            border: none;
+            border-radius: 4px;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #F1FAEE; /* Button hover background color from palette */
+            color: #E63946; /* Button hover text color from palette */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .no-products {
+            text-align: center;
+            font-size: 18px;
+            color: #457B9D; /* Color from palette */
+            margin-top: 20px;
+        }
+
+        /* Additional styles for a polished look */
+        .product-title {
+            font-weight: bold;
+            font-size: 18px;
+            color: #1D3557; /* Darker text color */
+        }
+
+        .product-id,
+        .product-quan {
+            font-size: 14px;
+            color: #1D3557; /* Darker text color */
+        }
+    </style>
+</head>
+
+<body>
+    <% let a = 0; %>
+    <h1>This is a cart</h1>
+    <% if (d.yes && d.arr.length > 0) { %> <!-- Check if array is non-empty -->
+        <div class="product-list">
+            <% let ans = 0; %>
+            <% d.arr.forEach(function(product) { %>
+                <div class="product-item">
+                    <p class="product-title"><%= product.title %></p>
+                    <% ans += product.quan * product.price; %>
+                    <p class="product-id">ID: <%= product.id %></p>
+                    <p class="product-quan">Quantity: <%= product.quan %></p>
+                    <p>Price: <%= product.quan * product.price %></p>
+                    <form action="splice" method="POST">
+                        <input type="hidden" name="id" value="<%= product.id %>"/>
+                        <button>Remove</button>
+                    </form>
+                </div>
+            <% }) %>
+        </div>
+        <p>Total Price:₹ <%= ans %></p>
+        <% a = ans; %>
+    <% } else { %>
+        <p class="no-products">No products available.</p>
+    <% } %>
+    <form action="/order" method="POST">
+        <input type="hidden" value="<%= a %>" name="total"/>
+        <button>ORDER NOW</button>
+    </form>
+</body>
+
+</html>
